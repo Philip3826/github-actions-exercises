@@ -46,3 +46,12 @@ jobs:
         run: bash ci/build-docker.sh
       - name: push docker
         run: bash ci/push-docker.sh
+  Component-Test:
+    needs: [Docker-Image]
+    steps:
+      - name: Execute component test
+        run: bash ci/component-test.sh
+  Performance-Test:
+    needs: [Docker-Image]
+      - name: Execute performance test
+        run: bash ci/performance-test.sh
