@@ -43,6 +43,6 @@ jobs:
           name: code
           path: .
       - name: build docker
-        uses: bash ci/build-docker.sh
+        run: bash ci/build-docker.sh
       - name: push docker
-        uses: bash ci/push-docker.sh
+        run: bash ci/push-docker.sh
